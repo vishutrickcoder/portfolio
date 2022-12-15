@@ -8,13 +8,16 @@
     --background-color : hsl(240deg , 80% , 100%);
     --text-color : hsl(240deg , 95% , 8%);
     --intro-color : hsl(0,0%,85%);
+    --shadow-color : hsl(225,10% ,83%);
+    --shadow-color-dark: hsl(225, 10%, 63%);
 
     --text-size-small : 0.5rem;
     --text-size-regular: 1rem;
     --text-size-large: 1.5rem;
     --text-size-xl: 2rem;
 
-    --spacing-regular : 1rem;
+    --spacing-regular : 16px;
+    --spacing-small: calc(var(--spacing-regular ) / 2);
 
 }
 
@@ -26,7 +29,7 @@ body{
     font-size: var(--text-size-large);
 }
 
-header{
+.header{
     padding: 15px;
     position: sticky;
     top: 0;
@@ -70,6 +73,10 @@ footer{
 }
 .container{
     padding: 16px;
+}
+
+section{
+    scroll-margin-top: calc(100px - 2*(var(--spacing-regular)));
 }
 
 .container > section > h2{
@@ -149,7 +156,7 @@ form#contact{
     display: none;
 }
 
-#technologies{
+#technologies .container{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     /* place-items: center; */
@@ -159,19 +166,30 @@ form#contact{
     
 }
 
-.card header{
-    text-align: center;
-    /* z-index: 2; */
+.card header h1{
+    margin: 0;
 }
  
 
 
 .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: 1px solid white;
     padding: var(--spacing-regular);
-    box-shadow: 3px 3px 8px 5px var(--secondary-color);
+    box-shadow: 3px 3px 8px 5px var(--shadow-color);
+    /* box-shadow: 3px 3px 8px 5px var(--secondary-color); */
     width: 100%;
-    
+    border-radius: var(--spacing-regular);
+    transition: .4s ease-in , box-shadow 0.4s ease-in-out;
+}
+
+.card:hover{
+    box-shadow: 3px 3px 8px 9px var(--shadow-color-dark);
+    transform: translateY(var(--spacing-small));
+    transform: translateY(calc(-1 * var(--spacing-small)));
 }
 
 .card ul{
