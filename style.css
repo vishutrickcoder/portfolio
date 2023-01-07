@@ -31,7 +31,8 @@ body{
 
 .header{
     padding: 15px;
-    position: sticky;
+    position: static;
+    /* position: sticky; */
     top: 0;
     /* border: 1px solid white; */
     /* border-bottom: 2px solid; */

@@ -41,3 +41,14 @@ function clearLetters(){
     }
 }
 printletters(phrases[phraseIndex])
+
+window.addEventListener('scroll', function(){
+    // console.log(this.window.scrollY)
+    let intro = this.document.querySelector('.intro');
+    if (this.window.scrollY >= (intro.offsetHeight + intro.offsetTop )) {
+        this.document.querySelector(".header").style.position = "sticky";
+    }
+    else{
+        this.document.querySelector(".header").style.position = "revert";
+    }
+})
