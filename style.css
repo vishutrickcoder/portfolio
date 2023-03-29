@@ -269,7 +269,7 @@ form#contact{
 
 
 
-@media (prefers-color-scheme:dark) {
+@media (prefers-color-scheme: dark) {
     body{
         --background-color: hsl(240deg, 80%, 5%);
         --text-color: hsl(240deg, 95%, 100%);
