@@ -92,7 +92,7 @@ section{
 }
 
 #profile-pic{
-    /* border-radius: 50%; */
+    border-radius: 10%;
     height: 400px;
     width: 400px;
     filter: drop-shadow(4px -6px 10px black);
